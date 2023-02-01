@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import DefaultLayout from '../components/DefaultLayout'
-import { getAllCars } from '../redux/action/carsActions';
+import { getAllCars } from '../redux/actions/carsActions';
 import { Row, Col } from 'antd';
 import Spinner from '../components/Spinner';
 function Home() {

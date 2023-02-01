@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Form, Input } from 'antd'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { userRegister } from '../redux/action/userActions'
+import { userRegister } from '../redux/actions/userActions'
 function Register() {
     const dispatch = useDispatch()
     function onFinish(values) {
