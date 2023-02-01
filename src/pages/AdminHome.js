@@ -5,6 +5,7 @@ import { deleteCar, getAllCars } from "../redux/actions/carsActions";
 import { Col, Row, DatePicker } from "antd";
 import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
+
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Popconfirm } from "antd";
 const { RangePicker } = DatePicker;
