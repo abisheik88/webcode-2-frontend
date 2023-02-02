@@ -1,16 +1,17 @@
 import { Col, Row, Divider, DatePicker, Checkbox, Modal } from "antd";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import DefaultLayout from '../components/DefaultLayout'
+import DefaultLayout from "../components/DefaultLayout";
+import Spinner from "../components/Spinner";
 import { getAllCars } from "../redux/actions/carsActions";
 import moment from "moment";
 import { bookCar } from "../redux/actions/bookingActions";
-import Spinner from "../components/Spinner";
 import StripeCheckout from "react-stripe-checkout";
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-const { RangePicker } = DatePicker;
 
-function BookingCar({ match }) {
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { useParams } from "react-router-dom";
+const { RangePicker } = DatePicker;
+function BookingCar() {
     const { cars } = useSelector((state) => state.carsReducer);
     const { loading } = useSelector((state) => state.alertsReducer);
     const [car, setcar] = useState({});
@@ -22,11 +23,13 @@ function BookingCar({ match }) {
     const [totalAmount, setTotalAmount] = useState(0);
     const [showModal, setShowModal] = useState(false);
 
+    const match = useParams();
+
     useEffect(() => {
-        if (cars.length == 0) {
+        if (cars.length === 0) {
             dispatch(getAllCars());
         } else {
-            setcar(cars.find((o) => o._id == match.params.carid));
+            setcar(cars.find((o) => o._id === match.carid));
         }
     }, [cars]);
 
@@ -72,7 +75,7 @@ function BookingCar({ match }) {
                 style={{ minHeight: "90vh" }}
             >
                 <Col lg={10} sm={24} xs={24} className='p-3'>
-                    <img src={car.image} className="carimg2 bs1 w-100" data-aos='flip-left' data-aos-duration='1500' />
+                    <img src={car.image} className="carimg2 bs1 w-100" data-aos alt="nothing" />
                 </Col>
 
                 <Col lg={10} sm={24} xs={24} className="text-right">
