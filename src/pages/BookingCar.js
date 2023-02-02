@@ -80,13 +80,13 @@ function BookingCar() {
 
                 <Col lg={10} sm={24} xs={24} className="text-right">
                     <Divider type="horizontal" dashed>
-                        Car Info
+                        Product Info
                     </Divider>
                     <div style={{ textAlign: "right" }}>
                         <p>{car.name}</p>
                         <p>{car.rentPerHour} Rent Per hour /-</p>
-                        <p>Fuel Type : {car.fuelType}</p>
-                        <p>Max Persons : {car.capacity}</p>
+                        <p>Product Type : {car.fuelType}</p>
+                        <p>Product capacity : {car.capacity}</p>
                     </div>
 
                     <Divider type="horizontal" dashed>
@@ -123,7 +123,7 @@ function BookingCar() {
                                     }
                                 }}
                             >
-                                Driver Required
+                                Delivery Required
                             </Checkbox>
 
                             <h3>Total Amount : {totalAmount}</h3>
