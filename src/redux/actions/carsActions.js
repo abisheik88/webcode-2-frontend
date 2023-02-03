@@ -44,7 +44,7 @@ export const editCar = (reqObj) => async dispatch => {
         await axios.post('https://webcode-2.onrender.com/api/cars/editcar', reqObj)
 
         dispatch({ type: 'LOADING', payload: false })
-        message.success('Car details updated successfully')
+        message.success('Product details updated successfully')
         setTimeout(() => {
             window.location.href = '/admin'
         }, 500);
